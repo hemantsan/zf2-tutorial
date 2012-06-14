@@ -32,6 +32,7 @@ class Module
                 'db-adapter' =>  function($sm) {
                     $config = $sm->get('config');
                     $config = $config['db'];
+                    //$config is instance of \Zend\Config\Config. Adapter construct dont support it
                     $dbAdapter = new DbAdapter($config);
                     return $dbAdapter;
                 },
